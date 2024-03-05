@@ -67,8 +67,8 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
     val shadowOffset by remember(shadowOffsetX, shadowOffsetY) {
         derivedStateOf {
             DpOffset(
-                x = shadowOffsetX,
-                y = shadowOffsetY
+                x = 0.dp,
+                y = 0.dp
             )
         }
     }
@@ -99,8 +99,7 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
             modifier = Modifier
                 .fillMaxSize()
                 .background(
-                    color = Color.White,
-                    shape = RoundedCornerShape(5.dp)
+                    color = Color(0xFF252631)
                 )
 
         ) {
@@ -110,17 +109,19 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
                     .fillMaxSize()
                     .softLayerShadow(
                         radius = shadowRadius,
-                        color = shadowColor,
+                        color = Color(0x40C3C3C3),
                         shape = RoundedCornerShape(5.dp),
-                        spread = shadowSpread,
+                        spread = 5.dp,
                         offset = shadowOffset,
                         isAlphaContentClip = isAlphaContentClip
                     )
                     .background(
-                        color = contentColor,
+                        color = Color(0xFF252631),
                         shape = RoundedCornerShape(5.dp)
                     )
-            )
+            ){
+                Text("sdfd")
+            }
         }
     }
 }
